@@ -1,5 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using UESAN.Ecommerce.CORE.Core.Interfaces;
+using UESAN.Ecommerce.CORE.Core.Services;
 using UESAN.Ecommerce.CORE.Infrastructure.Data;
 using UESAN.Ecommerce.CORE.Infrastructure.Repositories;
 
@@ -18,6 +19,7 @@ builder
         options => options.UseSqlServer(connectionString));
 
 builder.Services.AddTransient<ICategoryRepository, CategoryRepository>();
+builder.Services.AddTransient<ICategoryService, CategoryService>();
 
 builder.Services.AddControllers();
 // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
